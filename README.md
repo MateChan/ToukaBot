@@ -1,8 +1,8 @@
 # ToukaBot
 
-添付した画像を透過するMisskeyボット
+「透過」を含むメンション投稿に対して，その投稿に添付してある画像を透過してリプライする Misskey bot
 
-## setup
+## Setup
 
 ```bash
 uv vnev
@@ -11,7 +11,7 @@ uv pip install -r requirements.txt
 echo -e "MISSKEY_HOST=<your_misskey_host>\nMISSKEY_TOKEN=<your_misskey_api_token>" > .env
 ```
 
-## run
+## Run
 
 ```bash
 source .venv/bin/activate
