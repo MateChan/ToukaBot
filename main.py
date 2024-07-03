@@ -22,6 +22,7 @@ class File(BaseModel):
 class User(BaseModel):
     username: str
     host: str | None
+    isBot: bool
 
 
 class Note(BaseModel):
@@ -79,7 +80,11 @@ async def main():
 
             note = event.body.body
 
-            if not note.text.find("透過") + 1 or len(note.files) == 0:
+            if (
+                not note.text.find("透過") + 1
+                or len(note.files) == 0
+                or note.user.isBot
+            ):
                 continue
 
             file_ids: List[str] = []
